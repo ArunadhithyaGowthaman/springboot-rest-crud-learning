@@ -50,6 +50,7 @@ public class Controller {
 	//This request is used to delete a particular user in the database and returns a proper httpstatus code by using responseentity.
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteUserById(@PathVariable Long id){
+		service.deleteUserById(id);
 		return ResponseEntity.noContent().build();
 	}
 	
