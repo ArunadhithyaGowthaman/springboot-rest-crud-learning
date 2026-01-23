@@ -17,4 +17,6 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> handleinvalidinputs(IllegalArgumentException ex){
 		return ResponseEntity.badRequest().build();
 	}
+	
+	
 }
