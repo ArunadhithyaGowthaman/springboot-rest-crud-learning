@@ -23,7 +23,7 @@ public class Controller {
 	//This controller saves a new user in database and returns a proper httpstatus code by using responseentity.
 	@PostMapping
 	public ResponseEntity<User> saveUser(@RequestBody User user){
-		if(user.getName()==null&&user.getName().isBlank()) {
+		if(user.getName()==null||user.getName().isBlank()) {
 			throw new IllegalArgumentException("Name must be mandatory.");
 		}
 		return new ResponseEntity<>(service.saveUsers(user),HttpStatus.CREATED);
